@@ -1,0 +1,16 @@
+Controller/MainController.class
+Controller/RegisterFormController.class
+module-info.class
+View/IViewEmployee.class
+Model/User.class
+View/IViewUser.class
+Controller/MenuPageController.class
+Model/PayrollModel.class
+View/IPersist.class
+Controller/StaffPaymentController.class
+Controller/LoginController.class
+Model/Employee.class
+com/mycompany/ginpayrollsystem/App.class
+Model/EmployeePersister.class
+Controller/EmployeeSelfServiceController.class
+View/StaffView.class
