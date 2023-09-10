@@ -4,14 +4,12 @@
  */
 package Model;
 
-import java.util.Date;
-
 /**
  *
  * @author nuii
  */
 public class Employee {
-    private Long employeeId;
+    private Long id;
     private String firstName;
     private String lastName;
     private String address;
@@ -28,8 +26,8 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee(Long employeeId, String firstName, String lastName, String address, String contactNumber, String birthDate, String startDate, String jobTitle, String BankName, String BSB, String accountName, String accountNumber, Double hourlyRate) {
-        this.employeeId = employeeId;
+    public Employee(Long id, String firstName, String lastName, String address, String contactNumber, String birthDate, String startDate, String jobTitle, String BankName, String BSB, String accountName, String accountNumber, Double hourlyRate) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
@@ -44,12 +42,12 @@ public class Employee {
         this.hourlyRate = hourlyRate;
     }
 
-    public Long getEmployeeId() {
-        return employeeId;
+    public Long getid() {
+        return id;
     }
 
-    public void setEmployeeId(Long employeeId) {
-        this.employeeId = employeeId;
+    public void setid(Long id) {
+        this.id = id;
     }
 
     public String getFirstName() {

@@ -33,9 +33,7 @@ public class EmployeePersister implements IPersist {
     private PreparedStatement createTableEmployee;
     private PreparedStatement insertUser;
     private PreparedStatement insertEmployee;
-    private PreparedStatement selectEmployee;
     
-    private List<User> userList;
     public EmployeePersister(){
    
    // public void createDatabase() {   
@@ -47,15 +45,14 @@ public class EmployeePersister implements IPersist {
      */
         USERNAME = "root";
         PASSWORD = "password";
-        this.userList = new LinkedList<>();
-        this.userList.add(new User("tom","tomm", "tomM123","tom@GIN.com.au"));
-        this.userList.add(new User("hol","hols", "holS453","hols@GIN.com.au"));
+        
         establishDatabaseConnection();
-        addUsers((LinkedList<User>) this.userList);
+        
     }
     
     public void establishDatabaseConnection(){
         try {
+            PreparedStatement replaceUser;
             //Connects to the SQL instance
             sqlConnection = DriverManager.getConnection(MYSQL_URL, USERNAME, PASSWORD); 
             //Creates the database if not exists
@@ -68,15 +65,15 @@ public class EmployeePersister implements IPersist {
             dbConnection = DriverManager.getConnection(DB_URL, USERNAME, PASSWORD); 
             createTableUser = dbConnection.prepareStatement(""
                     + "create table if not exists user(\n"
-                    + "employeeID int not null auto_increment,\n"
+                    + "id int not null auto_increment,\n"
                     + "name varchar(50) not null, \n"
                     + "username varchar(50) not null,\n"
                     + "password varchar(10) not null,\n"
                     + "email varchar(50) not null, \n"
-                    + "primary key (employeeID))");
+                    + "primary key (id))");
             createTableEmployee = dbConnection.prepareStatement(""
                     + "create table if not exists employee(\n"
-                    + "employeeID int not null auto_increment,\n"
+                    + "id int not null auto_increment,\n"
                     + "firstname varchar(50) not null,\n"
                     + "lastname varchar(50) not null,\n"
                     + "address varchar(80) not null,\n"
@@ -88,16 +85,33 @@ public class EmployeePersister implements IPersist {
                     + "bsb varchar(12) not null,\n"
                     + "accountname varchar(50) not null,\n"
                     + "accountnumber varchar(50),\n"
-                    + "primary key (employeeID))");
+                    + "primary key (id))");
             createTableUser.executeUpdate();
             createTableEmployee.executeUpdate();
-            insertEmployee = dbConnection.prepareStatement("insert into employee" 
-                    + "(firstname, lastname, address, contactnumber, birthdate, startdate, jobtitle, bankname, bsb, accountname, accountnumber)"
-                    + "values (?,?,?,?,?,?,?,?,?,?,?)");
-            insertUser = dbConnection.prepareStatement("insert into user"
-                    + "(name, username, password, email)"
-                    + "values (?,?,?,?)");
-            selectEmployee = dbConnection.prepareStatement("select * from employee");
+
+            
+            replaceUser = dbConnection.prepareStatement(
+                    "replace into user"
+                    + "(id, name, username, password, email)"
+                    + "values (1, 'tom','tomm','tomM123','tom@GIN.com.au')"
+                    );
+            replaceUser.executeUpdate();
+            replaceUser = dbConnection.prepareStatement(
+                    "replace into user"
+                    + "(id, name, username, password, email)"
+                    + "values (2, 'hol','hols','holS453','hols@GIN.com.au')"
+                    );
+            replaceUser.executeUpdate();
+            // this.userList = new LinkedList<>();
+            // this.userList.add(new User("tom","tomm", "tomM123","tom@GIN.com.au"));
+            // this.userList.add(new User("hol","hols", "holS453","hols@GIN.com.au"));
+            // for (User oneUser : userList) {
+            //     replaceUser.setString(1, oneUser.getName());
+            //     replaceUser.setString(2, oneUser.getUsername());
+            //     replaceUser.setString(3, oneUser.getPassword());
+            //     replaceUser.setString(4, oneUser.getEmail());
+            //     replaceUser.executeUpdate();
+            // }
             
         }catch (SQLException e) {
             System.out.println("Connection Failed! Check output console");
@@ -160,12 +174,14 @@ public class EmployeePersister implements IPersist {
     //Synchronised select of all records from residence needful table 
     public  LinkedList<Employee> selectEmployee()  {
         
+        
         LinkedList<Employee> employeeList = new LinkedList<>();
         try{
+           PreparedStatement selectEmployee = dbConnection.prepareStatement("select * from employee");
            ResultSet results =  selectEmployee.executeQuery();
         while (results.next()) {
             employeeList.add(new Employee(
-                    results.getLong("employeeid"),
+                    results.getLong("id"),
                     results.getString("firstname"),
                     results.getString("lastname"),
                     results.getString("address"),

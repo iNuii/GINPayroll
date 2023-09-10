@@ -122,6 +122,8 @@ public class RegisterFormController implements Initializable {
         private void loadLoginPage() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Login Page.fxml"));
+            LoginController loginController = new LoginController(new EmployeePersister());
+            loader.setController(loginController);
             Parent loginPage = loader.load();
             Scene scene = new Scene(loginPage);
 
