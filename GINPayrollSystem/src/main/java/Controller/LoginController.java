@@ -18,7 +18,9 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleButton;
 import javafx.stage.Stage;
 
 /**
@@ -38,6 +40,11 @@ public class LoginController implements Initializable {
     @FXML
     private Button registerButton;
     
+    @FXML
+    private ToggleButton staffModeBT;
+    
+    
+    
     private EmployeePersister employeePersister;
     
     public LoginController(EmployeePersister employeePersister){
@@ -45,14 +52,31 @@ public class LoginController implements Initializable {
     }
     
     @FXML
-    public void loginButtonClick(ActionEvent event){
+    public void loginButtonClick(ActionEvent event) throws IOException{
         String username = userTF.getText();
         String password = passTF.getText();
-        
+
         boolean isAuthenticated = employeePersister.authenticateUser(username, password);
         
         if (isAuthenticated) {
-            try {
+            if (staffModeBT.isSelected()){
+                try {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Menu Page Staff.fxml"));
+                    Parent menuPage = loader.load();
+                    Scene scene = new Scene(menuPage);
+                    
+                    // Get the current stage (your login stage)
+                    Stage loginStage = (Stage) loginButton.getScene().getWindow();
+                    
+                    // Set the new scene on the current stage
+                    loginStage.setScene(scene);
+                    loginStage.setTitle("Staff Menu Page");
+                    loginStage.show();
+
+            }catch (IOException e) {
+                    e.printStackTrace();
+                    showAlert("Error", "Failed to load the menu page.");
+                }                }else{
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Menu Page.fxml"));
                     Parent menuPage = loader.load();
                     Scene scene = new Scene(menuPage);
@@ -64,13 +88,11 @@ public class LoginController implements Initializable {
                     loginStage.setScene(scene);
                     loginStage.setTitle("Menu Page");
                     loginStage.show();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                    showAlert("Error", "Failed to load the menu page.");
                 }
-        } else{
+        }else {
             showAlert("Authentication Error", "Invalid username or password. Please try again.");
         }
+                        
     }
   
     @FXML

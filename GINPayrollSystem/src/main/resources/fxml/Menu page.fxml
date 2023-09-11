@@ -16,12 +16,11 @@
         <menus>
           <Menu mnemonicParsing="false" text="Menu">
             <items>
-                  <MenuItem fx:id="EmployeeInfo" mnemonicParsing="false" onAction="#EmInfoClick" text="Employee Information" />
+                  <MenuItem fx:id="employeeInfo" mnemonicParsing="false" onAction="#emInfoClick" text="Employee Information" />
                   <MenuItem mnemonicParsing="false" text="Leave" />
-                  <MenuItem mnemonicParsing="false" text="Payment" />
-                  <MenuItem mnemonicParsing="false" text="Payroll Setup" />
-                  <MenuItem mnemonicParsing="false" text="Report" />
-              <MenuItem mnemonicParsing="false" text="Logout" />
+                  <MenuItem fx:id="timeSheet" mnemonicParsing="false" onAction="#timeSheetClick" text="Time Sheet" />
+                  <MenuItem fx:id="payslip" mnemonicParsing="false" onAction="#payslipClick" text="View Payslip" />
+              <MenuItem mnemonicParsing="false" text="Exit" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">

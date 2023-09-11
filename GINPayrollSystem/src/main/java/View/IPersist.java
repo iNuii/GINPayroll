@@ -12,9 +12,13 @@ import java.util.LinkedList;
  *
  * @author nuii
  */
+
 public interface IPersist {
   // public void createDatabase();
   public  void addUsers(LinkedList<User> userList);
   public  void addEmployee(LinkedList<Employee> EmployeeList);
   public  LinkedList<Employee> selectEmployee();
+  
+  public void updateEmployeeInfo(Employee updatedEmployee);
+  public void saveWorkedHours(Employee totalWorkedHour);
 }

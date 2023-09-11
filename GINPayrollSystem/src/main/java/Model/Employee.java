@@ -9,61 +9,63 @@ package Model;
  * @author nuii
  */
 public class Employee {
-    private Long id;
-    private String firstName;
-    private String lastName;
+    private String id;
+    private String name;
     private String address;
-    private String contactNumber;
-    private String birthDate;
-    private String startDate;
-    private String jobTitle;
-    private String BankName;
+    private String contactPhone;
+    private String dob;
+    private String bankName;
     private String BSB;
     private String accountName;
     private String accountNumber;
-    private Double hourlyRate;
+    private String tfn;
+    private Double workedHours;
+
 
     public Employee() {
     }
 
-    public Employee(Long id, String firstName, String lastName, String address, String contactNumber, String birthDate, String startDate, String jobTitle, String BankName, String BSB, String accountName, String accountNumber, Double hourlyRate) {
+    public Employee(String id, String name, String address, String contactPhone, String dob, String bankName, String BSB, String accountName, String accountNumber, String tfn, Double workedHours) {
         this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.name = name;
         this.address = address;
-        this.contactNumber = contactNumber;
-        this.birthDate = birthDate;
-        this.startDate = startDate;
-        this.jobTitle = jobTitle;
-        this.BankName = BankName;
+        this.contactPhone = contactPhone;
+        this.dob = dob;
+        this.bankName = bankName;
         this.BSB = BSB;
         this.accountName = accountName;
         this.accountNumber = accountNumber;
-        this.hourlyRate = hourlyRate;
+        this.tfn = tfn;
+        this.workedHours = workedHours;
     }
 
-    public Long getid() {
+    public Employee(String id, String name, String address, String contactPhone, String dob, String bankName, String BSB, String accountName, String accountNumber, String tfn) {
+        this.id = id;
+        this.name = name;
+        this.address = address;
+        this.contactPhone = contactPhone;
+        this.dob = dob;
+        this.bankName = bankName;
+        this.BSB = BSB;
+        this.accountName = accountName;
+        this.accountNumber = accountNumber;
+        this.tfn = tfn;
+    }
+
+    public String getid() {
         return id;
     }
 
-    public void setid(Long id) {
+    public void setid(String id) {
         this.id = id;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getName() {
+        return name;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getAddress() {
@@ -74,44 +76,29 @@ public class Employee {
         this.address = address;
     }
 
-    public String getContactNumber() {
-        return contactNumber;
+    public String getContactPhone() {
+        return contactPhone;
     }
 
-    public void setContactNumber(String contactNumber) {
-        this.contactNumber = contactNumber;
+    public void setContactPhone(String contactPhone) {
+        this.contactPhone = contactPhone;
     }
 
-    public String getBirthDate() {
-        return birthDate;
+    public String getDob() {
+        return dob;
     }
 
-    public void setBirthDate(String birthDate) {
-        this.birthDate = birthDate;
+    public void setDob(String dob) {
+        this.dob = dob;
     }
 
-    public String getStartDate() {
-        return startDate;
-    }
-
-    public void setStartDate(String startDate) {
-        this.startDate = startDate;
-    }
-
-    public String getJobTitle() {
-        return jobTitle;
-    }
-
-    public void setJobTitle(String jobTitle) {
-        this.jobTitle = jobTitle;
-    }
 
     public String getBankName() {
-        return BankName;
+        return bankName;
     }
 
-    public void setBankName(String BankName) {
-        this.BankName = BankName;
+    public void setBankName(String bankName) {
+        this.bankName = bankName;
     }
 
     public String getBSB() {
@@ -138,13 +125,22 @@ public class Employee {
         this.accountNumber = accountNumber;
     }
 
-    public Double getHourlyRate() {
-        return hourlyRate;
+    public String getTfn() {
+        return tfn;
     }
 
-    public void setHourlyRate(Double hourlyRate) {
-        this.hourlyRate = hourlyRate;
+    public void setTfn(String tfn) {
+        this.tfn = tfn;
     }
+
+    public Double getWorkedHours() {
+        return workedHours;
+    }
+
+    public void setWorkedHours(Double workedHours) {
+        this.workedHours = workedHours;
+    }
+
     
     
     

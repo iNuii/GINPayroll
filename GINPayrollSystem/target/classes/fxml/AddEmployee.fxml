@@ -3,37 +3,15 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1073.0" prefWidth="1707.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1073.0" prefWidth="1707.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml.AddEmployeeController">
    <children>
-      <Text layoutX="49.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hi" wrappingWidth="30.17626953125">
-         <font>
-            <Font name="Helvetica" size="24.0" />
-         </font>
-      </Text>
-      <MenuBar layoutY="1.0" prefHeight="27.0" prefWidth="1707.0" AnchorPane.topAnchor="0.0">
-        <menus>
-          <Menu mnemonicParsing="false" text="Menu">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
-      <Text layoutX="79.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Employee name">
+      <Text layoutX="49.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Employee Information" wrappingWidth="282.17626953125">
          <font>
             <Font name="Helvetica" size="24.0" />
          </font>
@@ -130,70 +108,36 @@
                         <Font name="Helvetica" size="18.0" />
                      </font>
                   </Label>
-                  <Label text="Gender">
-                     <font>
-                        <Font name="Helvetica" size="18.0" />
-                     </font>
-                  </Label>
                </children>
             </VBox>
          </children>
       </VBox>
-      <Button layoutX="1286.0" layoutY="968.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="77.0" text="Back" />
+      <Button fx:id="backBT" layoutX="1274.0" layoutY="775.0" mnemonicParsing="false" onAction="#backBTClick" prefHeight="35.0" prefWidth="77.0" text="Back" />
       <VBox layoutX="272.0" layoutY="183.0" prefHeight="200.0" prefWidth="364.0" spacing="16.0">
          <children>
-            <TextField />
-            <TextField />
-            <TextField />
-            <TextField />
-            <TextField />
+            <TextField fx:id="empIDTF" />
+            <TextField fx:id="nameTF" />
+            <TextField fx:id="addressTF" />
+            <TextField fx:id="contactPhoneTF" />
+            <TextField fx:id="tfnTF" />
          </children>
       </VBox>
       <VBox layoutX="272.0" layoutY="554.0" prefHeight="200.0" prefWidth="364.0" spacing="16.0">
          <children>
-            <TextField />
-            <TextField />
-            <TextField />
-            <TextField />
+            <TextField fx:id="bankNameTF" />
+            <TextField fx:id="accNumberTF" />
+            <TextField fx:id="accNameTF" />
+            <TextField fx:id="bsbTF" />
          </children>
       </VBox>
       <VBox layoutX="922.0" layoutY="183.0" prefHeight="0.0" prefWidth="364.0" spacing="16.0">
          <children>
-            <TextField />
-            <TextField />
+            <TextField fx:id="dobTF" />
          </children>
       </VBox>
-      <VBox layoutX="768.0" layoutY="537.0" prefHeight="100.0" prefWidth="370.0">
-         <children>
-            <VBox prefHeight="200.0" prefWidth="104.0" spacing="20.0">
-               <children>
-                  <Label text="Contract Start">
-                     <VBox.margin>
-                        <Insets top="20.0" />
-                     </VBox.margin>
-                     <font>
-                        <Font name="Helvetica" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label text="Contract Type">
-                     <font>
-                        <Font name="Helvetica" size="18.0" />
-                     </font>
-                  </Label>
-               </children>
-            </VBox>
-         </children>
-      </VBox>
-      <Text layoutX="740.0" layoutY="532.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contract Information">
-         <font>
-            <Font name="Helvetica" size="20.0" />
-         </font>
-      </Text>
-      <VBox layoutX="922.0" layoutY="554.0" prefHeight="0.0" prefWidth="364.0" spacing="16.0">
-         <children>
-            <TextField />
-            <TextField />
-         </children>
-      </VBox>
+      <VBox layoutX="922.0" layoutY="554.0" prefHeight="0.0" prefWidth="364.0" spacing="16.0" />
+      <Button fx:id="searchBT" layoutX="653.0" layoutY="179.0" mnemonicParsing="false" onAction="#searchBTClick" prefHeight="35.0" prefWidth="77.0" text="Search" />
+      <Button fx:id="addBT" layoutX="1079.0" layoutY="775.0" mnemonicParsing="false" onAction="#addBTClick" prefHeight="35.0" prefWidth="99.0" text="Add / Register" />
+      <Button fx:id="cancelBT" layoutX="1189.0" layoutY="775.0" mnemonicParsing="false" onAction="#cancelBTClick" prefHeight="35.0" prefWidth="77.0" text="Cancel" />
    </children>
 </AnchorPane>

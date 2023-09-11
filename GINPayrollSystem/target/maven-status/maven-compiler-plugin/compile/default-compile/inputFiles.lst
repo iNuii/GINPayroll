@@ -1,16 +1,15 @@
-/Users/papatpon.d/Documents/temp_file/Project 2/GINPayrollSystem/src/main/java/Model/User.java
-/Users/papatpon.d/Documents/temp_file/Project 2/GINPayrollSystem/src/main/java/View/IPersist.java
-/Users/papatpon.d/Documents/temp_file/Project 2/GINPayrollSystem/src/main/java/Controller/RegisterFormController.java
-/Users/papatpon.d/Documents/temp_file/Project 2/GINPayrollSystem/src/main/java/Controller/EmployeeSelfServiceController.java
-/Users/papatpon.d/Documents/temp_file/Project 2/GINPayrollSystem/src/main/java/module-info.java
-/Users/papatpon.d/Documents/temp_file/Project 2/GINPayrollSystem/src/main/java/Model/Employee.java
-/Users/papatpon.d/Documents/temp_file/Project 2/GINPayrollSystem/src/main/java/com/mycompany/ginpayrollsystem/App.java
-/Users/papatpon.d/Documents/temp_file/Project 2/GINPayrollSystem/src/main/java/Controller/StaffPaymentController.java
-/Users/papatpon.d/Documents/temp_file/Project 2/GINPayrollSystem/src/main/java/View/IViewUser.java
-/Users/papatpon.d/Documents/temp_file/Project 2/GINPayrollSystem/src/main/java/Controller/LoginController.java
-/Users/papatpon.d/Documents/temp_file/Project 2/GINPayrollSystem/src/main/java/View/StaffView.java
-/Users/papatpon.d/Documents/temp_file/Project 2/GINPayrollSystem/src/main/java/Model/PayrollModel.java
-/Users/papatpon.d/Documents/temp_file/Project 2/GINPayrollSystem/src/main/java/Model/EmployeePersister.java
-/Users/papatpon.d/Documents/temp_file/Project 2/GINPayrollSystem/src/main/java/View/IViewEmployee.java
-/Users/papatpon.d/Documents/temp_file/Project 2/GINPayrollSystem/src/main/java/Controller/MainController.java
-/Users/papatpon.d/Documents/temp_file/Project 2/GINPayrollSystem/src/main/java/Controller/MenuPageController.java
+/Users/nuii/GINPayroll/GINPayrollSystem/src/main/java/Controller/PaymentReportController.java
+/Users/nuii/GINPayroll/GINPayrollSystem/src/main/java/module-info.java
+/Users/nuii/GINPayroll/GINPayrollSystem/src/main/java/Controller/LoginController.java
+/Users/nuii/GINPayroll/GINPayrollSystem/src/main/java/Model/User.java
+/Users/nuii/GINPayroll/GINPayrollSystem/src/main/java/Controller/MenuPageStaffController.java
+/Users/nuii/GINPayroll/GINPayrollSystem/src/main/java/Controller/MenuPageController.java
+/Users/nuii/GINPayroll/GINPayrollSystem/src/main/java/Controller/EmployeeInfoController.java
+/Users/nuii/GINPayroll/GINPayrollSystem/src/main/java/Model/PayrollModel.java
+/Users/nuii/GINPayroll/GINPayrollSystem/src/main/java/Model/Employee.java
+/Users/nuii/GINPayroll/GINPayrollSystem/src/main/java/Controller/AddEmployeeController.java
+/Users/nuii/GINPayroll/GINPayrollSystem/src/main/java/Controller/TimeSheetController.java
+/Users/nuii/GINPayroll/GINPayrollSystem/src/main/java/Controller/RegisterFormController.java
+/Users/nuii/GINPayroll/GINPayrollSystem/src/main/java/com/mycompany/ginpayrollsystem/App.java
+/Users/nuii/GINPayroll/GINPayrollSystem/src/main/java/View/IPersist.java
+/Users/nuii/GINPayroll/GINPayrollSystem/src/main/java/Model/EmployeePersister.java
